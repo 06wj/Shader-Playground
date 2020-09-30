@@ -1,0 +1,29 @@
+[{
+    "group": "SDF",
+    "src": "sdf",
+    "demos": [{
+        "label": "Circle",
+        "src": "circle"
+    }, {
+        "label": "Rect",
+        "src": "rect"
+    }, {
+        "label": "Circle & Rect",
+        "src": "rect_circle_op"
+    },{
+        "label": "Raymatching",
+        "src": "raymatching"
+    }, {
+        "label": "AO",
+        "src": "ao"
+    }, {
+        "label": "Shadow",
+        "src": "shadow"
+    }, {
+        "label": "Lighting",
+        "src": "lighting"
+    }, {
+        "label": "Final",
+        "src": "final"
+    }]
+}]
