@@ -17,9 +17,8 @@ float sdPlane(vec3 pos, float y) {
 }
 
 float map(vec3 pos) {
-    float sdf = sdSphere(pos - vec3(-.8, .8, .0), .8);
+    float sdf = sdSphere(pos - vec3(.0, .8, .0), .8);
     sdf = min(sdf, sdPlane(pos, .0));
-    sdf = min(sdf, sdBox(pos - vec3(.9, .8, .0), vec3(.8, .8, 1.)));
     return sdf;
 }
 
@@ -38,7 +37,7 @@ float softShadow( in vec3 rayPos, in vec3 rayDir, in float mint, in float maxt, 
         res = min( res, k*h/t );
         t += h;
     }
-    return res;
+    return floor(sin(iTime*3.0)) < -.5 ? res : 1.0;
 }
 
 float raycast(in vec3 rayPos, in vec3 rayDir) {
@@ -89,7 +88,7 @@ vec3 render(vec3 cameraPos, vec3 dir) {
         vec3 normal = getNormal(pos);
         
         float ao = getAO(pos, normal);
-        float shadow = softShadow(pos, normalize(vec3(.1, .4, .8)), 0.02, 2.5, 8.0);
+        float shadow = softShadow(pos, normalize(vec3(.2, .25, -.1)), 0.02, 2.5, 8.0);
         return vec3(shadow);
     }
 
