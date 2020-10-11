@@ -26,4 +26,14 @@
         "label": "Final",
         "src": "final"
     }]
+}, {
+    "group": "FX",
+    "src": "fx",
+    "demos": [{
+        "label": "Pattern",
+        "src": "pattern"
+    }, {
+        "label": "Noise",
+        "src": "noise"
+    }]
 }]
