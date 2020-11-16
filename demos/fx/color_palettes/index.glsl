@@ -29,7 +29,8 @@ mat2 rotate2d(float angle){
 void mainImage( out vec4 fragColor, in vec2 fragCoord ){    
     vec2 st = fragCoord.xy/iResolution.xy;
 
-    st = rotate2d(noise((st + vec2(iTime*.5)) * 5. + .5) * .2) * st;
+    st.x = fract(2. - st.x);
+    st = rotate2d(noise((st + vec2(iTime*.5)) * 2.5 + .5) * .2) * st;
    
     vec3 color = vec3(.0);
     vec3 a, b, c, d;
@@ -67,5 +68,8 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord ){
     }
 
     color += colorPalette(st.x + iTime*.5, a, b, c, d);
+    float f = fract(st.y * 5.0);
+    color *= smoothstep( 0.49, 0.47, abs(f - 0.5));
+    color *= 0.5 + 0.5 * sqrt(4.0 * f * (1.0-f));
     fragColor = vec4(color, 1.0);
 }
