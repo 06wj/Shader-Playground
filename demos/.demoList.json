@@ -45,5 +45,8 @@
     "demos": [{
         "label": "Pattern",
         "src": "pattern"
+    }, {
+        "label": "Color Palettes",
+        "src": "color_palettes"
     }]
 }]
