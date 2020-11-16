@@ -27,13 +27,23 @@
         "src": "final"
     }]
 }, {
+    "group": "Noise",
+    "src": "noise",
+    "demos": [{
+        "label": "Random",
+        "src": "random"
+    }, {
+        "label": "Value Noise 1D",
+        "src": "value_noise_1d"
+    }, {
+        "label": "Value Noise 2D",
+        "src": "value_noise_2d"
+    }]
+}, {
     "group": "FX",
     "src": "fx",
     "demos": [{
         "label": "Pattern",
         "src": "pattern"
-    }, {
-        "label": "Noise",
-        "src": "noise"
     }]
 }]
