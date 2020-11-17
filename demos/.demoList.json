@@ -38,6 +38,9 @@
     }, {
         "label": "Value Noise 2D",
         "src": "value_noise_2d"
+    }, {
+        "label": "Perlin Noise",
+        "src": "perlin_noise"
     }]
 }, {
     "group": "FX",
