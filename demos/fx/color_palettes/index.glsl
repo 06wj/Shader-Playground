@@ -3,18 +3,22 @@ vec3 colorPalette(float t, vec3 a, vec3 b, vec3 c, vec3 d) {
     return a + b * cos(2.*3.1415926*(c*t+d));
 }
 
-float random(vec2 pos){
-    return fract(sin(dot(pos, vec2(11.3,33.3)))*45555.5);
+// hash function copy from https://www.shadertoy.com/view/4djSRW
+float hash12(vec2 p)
+{
+    vec3 p3  = fract(vec3(p.xyx) * .1031);
+    p3 += dot(p3, p3.yzx + 33.33);
+    return fract((p3.x + p3.y) * p3.z);
 }
 
 float noise(vec2 pos) {
     vec2 i = floor(pos);
     vec2 f = fract(pos);
     
-    float a = random(i);
-    float b = random(i + vec2(1, 0));
-    float c = random(i + vec2(0, 1));
-    float d = random(i + vec2(1, 1));
+    float a = hash12(i);
+    float b = hash12(i + vec2(1, 0));
+    float c = hash12(i + vec2(0, 1));
+    float d = hash12(i + vec2(1, 1));
 
     vec2 u = f * f * (3.0 - 2.0 * f);
 

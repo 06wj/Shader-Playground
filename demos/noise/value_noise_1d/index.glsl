@@ -1,16 +1,21 @@
-float random(float n){
-    return fract(sin(n)*1e4);
+// hash function copy from https://www.shadertoy.com/view/4djSRW
+float hash11(float p)
+{
+    p = fract(p * .1031);
+    p *= p + 33.33;
+    p *= p + p;
+    return fract(p);
 }
 
 float noise(float x) {
     float f = fract(x);
     float i = floor(x);
 
-    float a = random(i);
-    float b = random(i + 1.0);
+    float a = hash11(i);
+    float b = hash11(i + 1.0);
 
     float u = f * f * (3.0 - 2.0 * f);
-    return mix(a, b, floor(sin(iTime * 2.0)) < -.5 ? f : u);
+    return mix(a, b, fract(iTime * .3) < .5 ? f : u);
 }
 
 float plot(vec2 st, float pct){
