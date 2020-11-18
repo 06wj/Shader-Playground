@@ -41,6 +41,9 @@
     }, {
         "label": "Perlin Noise",
         "src": "perlin_noise"
+    }, {
+        "label": "Worley Noise",
+        "src": "worley_noise"
     }]
 }, {
     "group": "FX",
