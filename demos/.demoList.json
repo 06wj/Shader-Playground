@@ -44,6 +44,9 @@
     }, {
         "label": "Worley Noise",
         "src": "worley_noise"
+    }, {
+        "label": "FBM",
+        "src": "fbm"
     }]
 }, {
     "group": "FX",
