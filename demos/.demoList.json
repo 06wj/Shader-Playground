@@ -25,6 +25,9 @@
     }, {
         "label": "Final",
         "src": "final"
+    }, {
+        "label": "Magica CSG",
+        "src": "csg"
     }]
 }, {
     "group": "Noise",
